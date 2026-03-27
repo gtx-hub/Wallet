@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  /* Core theme variables used by ThemeProvider and components */
+  --bg: #FFFFFF; /* page background (light fallback) */
+  --card: #F8FAFC; /* surface / card background (light fallback) */
+  --text: #0F172A; /* primary text (light fallback) */
+  --text-secondary: #6B7280; /* secondary text (light fallback) */
+  --primary: #6fd2c0; /* keptprotocol primary */
+  --accent: #1cd6c6; /* keptprotocol accent */
+  --border: rgba(15,23,42,0.06);
+
+  /* legacy vars (keep for compatibility) */
+  --background: var(--bg);
+  --foreground: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0A0A0A;
+    --card: #111111;
+    --text: #FFFFFF;
+    --text-secondary: #A3A3A3;
+    --primary: #6fd2c0;
+    --accent: #1cd6c6;
+    --border: rgba(255,255,255,0.08);
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* When present during initial load, suppress animated transitions to prevent flicker */
+.preload-theme *, .preload-theme {
+  transition: none !important;
+  animation: none !important;
+}
